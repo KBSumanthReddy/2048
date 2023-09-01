@@ -84,12 +84,12 @@ function listchange(l,key){
                     }
                 }
             }
-            for(let q=0 ; q<3 ; q++){
-                if(l[k][q]!="" && l[k][q] == l[k][q+1]){
-                    l[k][q+1] = 2*l[k][q];
+            for(let q=3 ; q>=0 ; q--){
+                if(l[k][q]!="" && l[k][q] == l[k][q-1]){
+                    l[k][q] = 2*l[k][q];
                     score += 2*l[k][q];
-                    l[k][q] = "";
-                    q++;
+                    l[k][q-1] = "";
+                    q--;
                     h++;
                 }
             }
@@ -108,12 +108,12 @@ function listchange(l,key){
                     }
                 }
             }
-            for(let q=3 ; q>0 ; q--){
-                if(l[k][q]!="" && l[k][q] == l[k][q-1]){
-                    l[k][q-1] = 2*l[k][q];
+            for(let q=0 ; q<4 ; q++){
+                if(l[k][q]!="" && l[k][q] == l[k][q+1]){
+                    l[k][q] = 2*l[k][q];
                     score += 2*l[k][q];
-                    l[k][q] = "";
-                    q--;
+                    l[k][q+1] = "";
+                    q++;
                     h++;
                 }
             }
